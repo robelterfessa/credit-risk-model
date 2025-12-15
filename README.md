@@ -1,0 +1,17 @@
+# credit-risk-model
+
+Solution to week-4 challenges of Kaim Ai mastery challenge
+
+## Credit Scoring Business Understanding
+
+### Basel II and interpretability
+
+Credit risk regulations such as the Basel II Accord require banks to measure, monitor, and manage risk in a structured, transparent way, with clear documentation of data, methods, and assumptions. Because capital requirements and risk estimates affect profitability and financial stability, supervisors expect models to be explainable enough that their outputs can be understood, challenged, and validated over time. This pushes us toward models whose inputs, transformations, and predictions can be traced and justified, with well‑maintained documentation of design choices, limitations, and performance
+
+### Proxy variable: need and risks
+
+In this project there is no direct label indicating whether a customer actually defaulted on a loan, so a proxy target must be constructed from observed behaviour, such as RFM patterns that indicate disengagement or low activity. Without a proxy, supervised learning is not possible because the model would have nothing to learn as “good” or “bad” outcomes. However, building predictions on a proxy introduces business risk, because the proxy may not perfectly represent true default behaviour, and the model might systematically favour or penalize segments of customers based on patterns that correlate with the proxy but not with real creditworthiness. This can lead to mis‑priced risk, missed opportunities with good customers, unfair outcomes, and challenges if regulators or stakeholders ask how the target variable relates to actual default risk
+
+### Simple vs complex models in regulation
+
+A simple, interpretable model such as Logistic Regression combined with Weight of Evidence (WoE) transformations allows each feature’s effect on credit risk to be clearly quantified and communicated, and WoE bins can be reviewed for business sense and stability over time. This transparency makes it easier to validate the model, explain decisions to regulators and internal risk committees, and monitor how the model behaves as the portfolio and environment change. In contrast, complex models like Gradient Boosting can capture nonlinear interactions and often deliver higher predictive performance, but they behave more like black boxes, making it harder to explain individual decisions, diagnose shifts in behaviour, or justify the model in a regulated environment. The key trade‑off is between interpretability and governance on one side, and raw predictive power on the other, so the bank must balance regulatory expectations, operational complexity, and business value when choosing its preferred approach
